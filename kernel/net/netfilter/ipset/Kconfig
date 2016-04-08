@@ -18,7 +18,7 @@ config IP_SET_MAX
 	range 2 65534
 	depends on IP_SET
 	help
-	  You can define here default value of the maximum number 
+	  You can define here default value of the maximum number
 	  of IP sets for the kernel.
 
 	  The value can be overriden by the 'max_sets' module
@@ -41,6 +41,15 @@ config IP_SET_BITMAP_IPMAC
 	  can store IPv4 address and (source) MAC address pairs from a range.
 
 	  To compile it as a module, choose M here.  If unsure, say N.
+
+config IP_SET_BITMAP_MACIP
+	tristate "bitmap:mac,ip set support"
+	depends on IP_SET
+	help
+		This option adds the bitmap:mac,ip set type support, by which one
+		can store MAC address and (source) IPv4 address pairs from a range.
+
+		To compile it as a module, choose M here.  If unsure, say N.
 
 config IP_SET_BITMAP_PORT
 	tristate "bitmap:port set support"
